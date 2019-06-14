@@ -8,7 +8,7 @@
 	<properties resource="conn.properties" />
 	  -->
 	    
-	 <classPathEntry location="D:\mysql-connector-java-5.1.30.jar"/>
+	 <classPathEntry location="/Users/edz/.m2/repository/mysql/mysql-connector-java/5.1.30/mysql-connector-java-5.1.30.jar"/>
 
 	<context id="testTables" targetRuntime="MyBatis3">
 
@@ -21,25 +21,28 @@
 		
 		
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://localhost:3306/stu_origin" userId="root" password="123456">
+			connectionURL="jdbc:mysql://10.111.10.243:3306/vvshop_member_strategy" userId="develop" password="adam@zhouj1">
 		</jdbcConnection>
 		
           
-		<javaModelGenerator targetPackage="com.som.entity" targetProject="src">
+		<javaModelGenerator targetPackage="com.zj.shop.ms.model.skyreward" targetProject="src">
 			
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 		
-		<sqlMapGenerator targetPackage="com.som.dao"
+		<sqlMapGenerator targetPackage="com.zj.shop.ms.mapping"
 			targetProject="src" />
 			
-		<javaClientGenerator type="XMLMAPPER" targetPackage="com.som.dao" targetProject="src" />
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.zj.shop.ms.mapper" targetProject="src" />
 		
 		
 		<!--
 		<table tableName="user" domainObjectName="User"/>
  		<table tableName="stu" domainObjectName="Student"/>-->
-		<table tableName="tab_test" domainObjectName="Ttest"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+		<table tableName="vv_sky_reward_strategy" domainObjectName="SkyRewardStrategy"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			   enableSelectByExample="false" selectByExampleQueryId="false" />
+
+		<table tableName="vv_sky_reward_city_config" domainObjectName="SkyRewardCityConfig"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
 			   enableSelectByExample="false" selectByExampleQueryId="false" />
 
 	</context>
